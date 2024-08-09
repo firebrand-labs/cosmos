@@ -64,7 +64,7 @@ export function Solar(props) {
       spira.current.rotation,
       {
         duration: 0.3,
-        x: 1.66,
+        x: isMobile ? 1.62 : 1.66,
         y: -0.2,
       },
       -0.5

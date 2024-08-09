@@ -15,7 +15,7 @@ export function Solar(props) {
   const ref = useRef();
   const tl = useRef();
   const { viewport } = useThree();
-  const resRatio = viewport.width / 12;
+  const resRatio = viewport.width / 2;
   const isMobile = window.innerWidth < 768;
   const CircleOutline = ({ radius = 1, segments = 64, color = "black" }) => {
     const points = [];
@@ -64,8 +64,8 @@ export function Solar(props) {
       spira.current.rotation,
       {
         duration: 0.3,
-        x: isMobile ? 1.35 : 1.66,
-        y: isMobile ? -0.233 : -0.2,
+        x: 1.66,
+        y: -0.2,
       },
       -0.5
     );
@@ -74,8 +74,8 @@ export function Solar(props) {
       spira.current.position,
       {
         duration: 0.3,
-        x: isMobile ? 0.01 : 0.44,
-        y: isMobile ? 0 : -0.19,
+        x: isMobile ? 0.15 : 0.44,
+        y: isMobile ? -0.09 : -0.19,
       },
       -0.5
     );
@@ -454,14 +454,16 @@ export function Solar(props) {
   // isMobile
   console.log(viewport.width / 12);
   return (
-    <group
-      {...props}
-      dispose={null}
-      scale={[isMobile ? 0.4 : 1, isMobile ? 0.4 : 1, isMobile ? 0.4 : 1]}
-      rotation={[0.1, 5.5, 0]}
-      position={[0, isMobile ? 1 : -1, 1]}
-    >
-      <group>
+    <group {...props} dispose={null}>
+      <group
+        scale={[
+          isMobile ? 0.8 / resRatio : 1,
+          isMobile ? 0.8 / resRatio : 1,
+          isMobile ? 0.8 / resRatio : 1,
+        ]}
+        rotation={[isMobile ? 0.4 : 0.1, 5.5, 0]}
+        position={[0, isMobile ? 1 : -1, 1]}
+      >
         <group>
           <group position={[0.098, 1.24, 0.08]}>
             <group ref={centercir}>

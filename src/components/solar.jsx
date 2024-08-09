@@ -457,11 +457,11 @@ export function Solar(props) {
     <group {...props} dispose={null}>
       <group
         scale={[
-          isMobile ? 0.5 / resRatio : 1,
-          isMobile ? 0.5 / resRatio : 1,
-          isMobile ? 0.5 / resRatio : 1,
+          isMobile ? 0.6 / resRatio : 1,
+          isMobile ? 0.6 / resRatio : 1,
+          isMobile ? 0.6 / resRatio : 1,
         ]}
-        rotation={[isMobile ? 0.4 : 0.1, 5.5, 0]}
+        rotation={[isMobile ? 0.35 : 0.1, 5.5, 0]}
         position={[0, isMobile ? 1 : -1, 1]}
       >
         <group>

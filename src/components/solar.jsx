@@ -89,7 +89,7 @@ export function Solar(props) {
       },
       -0.5
     );
-
+    // command
     tl.current.to(
       dot9.current.position,
       {
